@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "W+QImfoKrANjCszdcK6MD6Rw1xFrg1A2HzE7Cnd7Ha6Sn8SlmzzR0o1hgXC0DjfsUlq6a6ElgjWIXCFroDmE5A==",
+  "success": true,
+  "projectFilePath": "/home/alex/Projects/AoC2021/day2/main/main.csproj",
+  "expectedPackageFiles": [
+    "/home/alex/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
