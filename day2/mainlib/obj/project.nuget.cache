@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gynkYxcSntjCZPZVNlxjw1DmiyQhhJ/xLy85gHPYL1ZQ9EUUX3s4P9IHZYiNzl/7AJodPLB8Kge05LeNNo8pYA==",
+  "dgSpecHash": "jtKtjBJQ4Zd33WtgjdDMsDAPYU0DNBvNvKydhsWK+Y1dKhYk6o2a8SLVgVWIvtfHqtkibiTZHXn/6WGLpFw6cQ==",
   "success": true,
   "projectFilePath": "/home/alex/Projects/AoC2021/day2/mainlib/mainlib.csproj",
   "expectedPackageFiles": [
+    "/home/alex/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
     "/home/alex/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []

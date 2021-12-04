@@ -193,10 +193,10 @@
 /home/alex/Projects/AoC2021/day2/maintest/bin/Debug/net5.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 /home/alex/Projects/AoC2021/day2/maintest/bin/Debug/net5.0/mainlib.dll
 /home/alex/Projects/AoC2021/day2/maintest/bin/Debug/net5.0/mainlib.pdb
-/home/alex/Projects/AoC2021/day2/maintest/obj/Debug/net5.0/maintest.csprojAssemblyReference.cache
 /home/alex/Projects/AoC2021/day2/maintest/obj/Debug/net5.0/maintest.GeneratedMSBuildEditorConfig.editorconfig
 /home/alex/Projects/AoC2021/day2/maintest/obj/Debug/net5.0/maintest.AssemblyInfoInputs.cache
 /home/alex/Projects/AoC2021/day2/maintest/obj/Debug/net5.0/maintest.AssemblyInfo.cs
 /home/alex/Projects/AoC2021/day2/maintest/obj/Debug/net5.0/maintest.csproj.CoreCompileInputs.cache
 /home/alex/Projects/AoC2021/day2/maintest/obj/Debug/net5.0/maintest.csproj.CopyComplete
 /home/alex/Projects/AoC2021/day2/maintest/obj/Debug/net5.0/maintest.genruntimeconfig.cache
+/home/alex/Projects/AoC2021/day2/maintest/obj/Debug/net5.0/maintest.csproj.AssemblyReference.cache

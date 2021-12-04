@@ -10,7 +10,6 @@
 /home/alex/Projects/AoC2021/day1/mainlib/obj/Debug/net5.0/mainlib.dll
 /home/alex/Projects/AoC2021/day1/mainlib/obj/Debug/net5.0/ref/mainlib.dll
 /home/alex/Projects/AoC2021/day1/mainlib/obj/Debug/net5.0/mainlib.pdb
-/home/alex/Projects/AoC2021/day2/mainlib/obj/Debug/net5.0/mainlib.csprojAssemblyReference.cache
 /home/alex/Projects/AoC2021/day2/mainlib/obj/Debug/net5.0/mainlib.GeneratedMSBuildEditorConfig.editorconfig
 /home/alex/Projects/AoC2021/day2/mainlib/obj/Debug/net5.0/mainlib.AssemblyInfoInputs.cache
 /home/alex/Projects/AoC2021/day2/mainlib/obj/Debug/net5.0/mainlib.AssemblyInfo.cs
@@ -22,3 +21,4 @@
 /home/alex/Projects/AoC2021/day2/mainlib/bin/Debug/net5.0/mainlib.dll
 /home/alex/Projects/AoC2021/day2/mainlib/bin/Debug/net5.0/ref/mainlib.dll
 /home/alex/Projects/AoC2021/day2/mainlib/bin/Debug/net5.0/mainlib.pdb
+/home/alex/Projects/AoC2021/day2/mainlib/obj/Debug/net5.0/mainlib.csproj.AssemblyReference.cache
