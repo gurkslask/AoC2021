@@ -24,6 +24,47 @@ namespace mainlib
         public static int SolveBasic(string ss){
 
             string random_numbers = ss.Split('\n')[0];
+            //System.Console.WriteLine($"Random numbers är: {random_numbers}");
+
+            List<board> lGrid = new List<board>();
+
+            string[] s = ss.Split('\n');
+            float modulusen = (s.Count() - 1) / 6;
+            int lower = 2;
+            int upper = 7;
+            for (int i = 0; i < modulusen; i += 1)
+            {
+                lGrid.Add(new board(string.Join('\n', s[lower..upper])));
+                lower += 6;
+                upper += 6;
+            }
+            int c = 1;
+            //Console.WriteLine(lGrid.Count());
+            int res = 0;
+            bool done = false;
+            // Loop through numbers and check if done
+            foreach (string snumber in random_numbers.Split(','))
+            {
+                int number = int.Parse(snumber);
+                foreach (board g in lGrid)
+                {
+                    g.insertnum((number));
+                    if (g.checkIfBoardIsWin()) {
+                        foreach(board b in lGrid){
+                            res = g.countNonMarked() * number;
+                            done = true;
+                        }
+                    g.Print();
+                    
+                    }
+                }
+                if (done) { break;}
+            }
+        return res;
+    }
+
+    public static int SolveAdv(string ss){
+            string random_numbers = ss.Split('\n')[0];
             System.Console.WriteLine($"Random numbers är: {random_numbers}");
 
             List<board> lGrid = new List<board>();
@@ -39,31 +80,44 @@ namespace mainlib
                 upper += 6;
             }
             int c = 1;
-            Console.WriteLine(lGrid.Count());
-            foreach (board b in lGrid)
-            {
-                Console.WriteLine("Init: \n " + b.ToString());
-            }
             int res = 0;
             bool done = false;
+            List<board> listToRemove = new List<board>();
             // Loop through numbers and check if done
             foreach (string snumber in random_numbers.Split(','))
             {
                 int number = int.Parse(snumber);
                 foreach (board g in lGrid)
                 {
+
                     g.insertnum((number));
-                    if (g.checkIfBoardIsWin()) {
-                        Console.WriteLine("********** KLART ********");
-                        foreach(board b in lGrid){
+
+                    if (lGrid.Count() > 1 + listToRemove.Count()) {
+                        if (g.checkIfBoardIsWin()){
+                            Console.WriteLine("********** BRÄDA KLAR  ********");
+                            listToRemove.Add(g);
+                        }
+                    } else {
+                        if (g.checkIfBoardIsWin()){
+                            Console.WriteLine("********** ALLA KLAR  ********");
                             res = g.countNonMarked() * number;
                             done = true;
                             Console.WriteLine(res);
+                            Console.WriteLine($"Antal bräden när klart: {lGrid.Count()}");
+                            foreach (board bb in lGrid){
+                                Console.WriteLine(bb.ToString());
+                            }
                         }
-                    g.Print();
-                    
                     }
                 }
+                if (listToRemove.Count() == lGrid.Count())
+                {
+                    res = listToRemove[0].countNonMarked() * number;
+                }
+                foreach (board g in listToRemove){
+                    lGrid.Remove(g);
+                }
+                listToRemove = new List<board>();
                 if (done) { break;}
             }
         Console.WriteLine(lGrid.Count());
@@ -72,10 +126,6 @@ namespace mainlib
             Console.WriteLine(b.ToString());
         }
         return res;
-    }
-
-    public static int SolveAdv(string s){
-            return 42;
         }
     public static List<string> removeFromList(List<string> inlist, string siffra, int rempovepos){
         List<string> minlista = inlist;

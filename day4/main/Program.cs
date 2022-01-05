@@ -11,8 +11,8 @@ namespace main
             string s;
             s = mainlib.Class1.Hello();
             System.Console.WriteLine(s);
-            System.Console.WriteLine("Basic: " + mainlib.Class1.SolveBasic(mainlib.Class1.ReadSolveFile("3")));
-            System.Console.WriteLine("Advanced: " + mainlib.Class1.SolveAdv(mainlib.Class1.ReadSolveFile("3")));
+            System.Console.WriteLine("Basic: " + mainlib.Class1.SolveBasic(mainlib.Class1.ReadSolveFile("4")));
+            System.Console.WriteLine("Advanced: " + mainlib.Class1.SolveAdv(mainlib.Class1.ReadSolveFile("4")));
         }
     }
 }

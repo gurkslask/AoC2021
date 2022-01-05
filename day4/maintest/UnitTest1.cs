@@ -23,15 +23,15 @@ namespace maintest
             Assert.True(got == want);
 
         }
-        /*[Fact]
+        [Fact]
         public void TestSolveAdv()
         {
             string s = mainlib.Class1.ReadFile("4");
-            int want = 230;
+            int want = 1924;
             int got = mainlib.Class1.SolveAdv(s);
             System.Console.WriteLine($"Got: {got} \n Want: {want}");
             Assert.True(got == want);
 
-        }*/
+        }
     }
 }
