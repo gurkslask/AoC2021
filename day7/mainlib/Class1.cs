@@ -19,16 +19,18 @@ namespace mainlib
         }
         public static int SolveBasic(string ss){
             List<int> inList = parseInput(ss);
-            int maxPos = inList.Max() - 1;
-            // array 0 = pos 1, 
+            // Get the highest position for the for loop
+            int maxPos = inList.Max() + 1;
+            // Make array with positions
             int[] positions = new int[maxPos];
+            // Loop as many times as there are positions 
             for (int pos = 0; pos < maxPos; pos++)
             {
-                int realpos = pos + 1;
                 foreach (int crab in inList)
                 {
-                    positions[pos] += Math.Abs(realpos - (crab + 1));
+                    positions[pos] += Math.Abs(pos - (crab));
                 }
+                Console.WriteLine($"Position {pos}, fuel {positions[pos]}");
             }
             return Array.IndexOf(positions, positions.Min());
         }

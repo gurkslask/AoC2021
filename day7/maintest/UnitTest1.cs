@@ -15,14 +15,14 @@ namespace maintest
             Assert.True(got == want);
 
         }
-        /*[Fact]
+        [Fact]
         public void TestSolveAdv()
         {
             string s = mainlib.Class1.ReadFile("7");
-            int want = 12;
+            int want = 168;
             int got = mainlib.Class1.SolveAdv(s);
             System.Console.WriteLine($"Got: {got} \n Want: {want}");
             Assert.True(got == want);
-        }*/
+        }
     }
 }
