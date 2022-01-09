@@ -35,7 +35,31 @@ namespace mainlib
             return Array.IndexOf(positions, positions.Min());
         }
         public static int SolveAdv(string ss){
-            return 42;
+            List<int> inList = parseInput(ss);
+            // Get the highest position for the for loop
+            int maxPos = inList.Max() + 1;
+            // Make array with positions
+            double[] positions = new double[maxPos];
+            // Loop as many times as there are positions 
+            for (int pos = 0; pos < maxPos; pos++)
+            {
+                foreach (int crab in inList)
+                {
+                    // For each crab
+                    // Check how many moves it takes to get to positions
+                     int numMoves = Math.Abs(pos - crab);
+                     // Loop as many times as there are moves, and for each move
+                     int c = 1;
+                     for (int  mov = 0; mov < numMoves ; mov++)
+                     {
+                         positions[pos] += c;
+                         c++;
+                     }
+
+                }
+                Console.WriteLine($"Position {pos}, fuel {positions[pos]}");
+            }
+            return (int)positions.Min();
         }
         public static List<int> parseInput(string s)
         {
