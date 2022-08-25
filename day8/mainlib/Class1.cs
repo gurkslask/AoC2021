@@ -21,7 +21,7 @@ namespace mainlib
             var inputList = parseInput(ss);
             int res = 0;
             foreach (cords c in inputList){
-                Console.WriteLine(c);
+                //Console.WriteLine(c);
                 foreach (string outputVal in c.outputValue){
                     if (outputVal.Length == 2){
                         //1
@@ -45,8 +45,95 @@ namespace mainlib
             return res;
         }
 
+        public static string removeChar(string s, char Char)
+        {
+            try{
+            int i = s.IndexOf(Char);
+            s = s.Remove(i, 1);
+            } catch (ArgumentOutOfRangeException) {
+            }
+
+            return s;
+        }
         public static int SolveAdv(string ss){
-            return 42;
+            var inputList = parseInput(ss);
+            int res = 0;
+            /*
+             aaa
+            b   c
+            b   c
+            b   c
+             ddd
+            e   f
+            e   f
+            e   f
+             ggg
+            */
+            mainlib.coords coordsModel = new mainlib.coords();
+            foreach (cords c in inputList){
+                // Först ska vi hitta posisitioner
+                // Console.WriteLine($"Nu ska vi hitta positioner på {c.signalPatterns}");
+
+                coordsModel.find_num_1(c);
+                coordsModel.find_num_7(c);
+                coordsModel.find_num_4(c);
+                coordsModel.find_num_9(c);
+                coordsModel.find_num_6(c);
+                coordsModel.find_num_3(c);
+                coordsModel.find_num_8(c);
+                coordsModel.find_num_5(c);
+                coordsModel.find_num_2(c);
+                coordsModel.find_num_0(c);
+                Console.WriteLine("Nu har vi fått ut alla positionerna, så här ser de ut:");
+                coordsModel.print();
+                Console.WriteLine($"Det här är siffrornas pattern {coordsModel.printNums()}");
+
+                Console.WriteLine($"¨~~~~~Nu kör vi \n{c}\n~~~~");
+                string sres = "";
+                foreach (string outputVal in c.outputValue){
+                    // Med hjälp av positionerna ska vi kolla vad som är output
+                    /*Dictionary<string, int> actPatterns = new Dictionary<string,int>{
+                        {"acedgfb" , 8},
+                        {"cdfbe" , 5},
+                        {"gcdfa" , 2, acdfg},
+                        {"fbcad" , 3},
+                        {"dab" , 7},
+                        {"cefabd" , 9},
+                        {"cdfgeb" , 6},
+                        {"eafb" , 4},
+                        {"cagedb" , 0},
+                        {"ab" , 1}
+                        tr och br
+                    };*/
+
+                    Console.WriteLine("*******BEGIN*****");
+                    // Console.WriteLine($"Nu kör vi {outputVal}");
+
+                    List<string> ord_patterns = new ();
+                    foreach(string pattern in c.signalPatterns){
+                        ord_patterns.Add(String.Concat(pattern.OrderBy(c => c)));
+                    }
+
+                    string ord_output = string.Concat(outputVal.OrderBy(c => c));
+                    // Console.WriteLine($"Här är ordered output {ord_output}");
+                    IEnumerable<string> result = from pattern in ord_patterns
+                        where pattern == ord_output
+                        select pattern;
+                    List<string> lresult = result.ToList();
+                    foreach (string ress in lresult) {
+                        Console.WriteLine(ress);
+                        Console.WriteLine($"Siffran blev {coordsModel.number_dict[ress]} ");
+                        sres += coordsModel.number_dict[ress].ToString();
+                    }
+
+                    Console.WriteLine($"*******END***** Parsed: {int.Parse(sres)}");
+
+                }
+                res += int.Parse(sres);
+                Console.WriteLine($"*******************************************sres: {sres}");
+                Console.WriteLine($"*******************************************sres: {res}");
+            }
+            return res;
         }
         public static string printGrid(List<List<int>> inList)
         {
